@@ -4,10 +4,12 @@ services:
   environment-context-analyser-service:
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: dockerfile
+    env_file:
+      - ./.env
     volumes:
-      - ./src:/app/src
-      - ./src/api/model:/app/src/api/model
+      - ../src:/app/src
+      - ../src/api/model:/app/src/api/model
     tty: true
     restart: always
     cpus: 4

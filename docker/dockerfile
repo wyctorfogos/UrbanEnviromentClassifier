@@ -8,10 +8,10 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy the rest of the application code
-COPY ../src ./src
+COPY ../ .
 
 # Copy the requirements file first to leverage Docker cache
-COPY ../requirements.txt ./requirements.txt
+COPY ./requirements.txt ./requirements.txt
 
 # Install the dependencies
 RUN pip3 install -r requirements.txt

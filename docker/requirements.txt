@@ -1,4 +1,4 @@
-torch==1.10.0+cu113
+torch
 transformers
 numpy
 uvicorn

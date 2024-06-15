@@ -4,6 +4,9 @@ import uvicorn
 from model.ZeroShotClassifier import UrbanEnviromentClassifier
 import numpy as np
 import cv2
+import os
+
+API_PORT=os.getenv("API_PORT")
 
 # Initialize the model classifier
 model_classifier = UrbanEnviromentClassifier()
@@ -38,6 +41,6 @@ async def env_type_classification(file: UploadFile = File(...)):
 
 # Entry point for running the app
 if __name__ == "__main__":
-    config = uvicorn.Config("main:app", port=5000, log_level="info")
+    config = uvicorn.Config("main:app", port=API_PORT, log_level="info")
     server = uvicorn.Server(config)
     server.run()
