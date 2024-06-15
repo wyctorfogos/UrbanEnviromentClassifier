@@ -1,0 +1,7 @@
+torch==1.10.0+cu113
+transformers
+numpy
+uvicorn
+fastapi
+pillow==10.3.0
+opencv-python-headless
