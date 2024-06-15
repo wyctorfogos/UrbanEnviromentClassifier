@@ -10,9 +10,9 @@ processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14-336")
 
 class UrbanEnviromentClassifier:
     def __init__(self, model_name="openai/clip-vit-large-patch14-336", processor_name="openai/clip-vit-large-patch14-336"):
-        self.model = model  # Assign the loaded model to the instance
-        self.processor = processor  # Assign the loaded processor to the instance
-        self.device = device  # Set device (GPU if available, otherwise CPU)
+        self.model = model_name 
+        self.processor = processor_name  
+        self.device = device  
         self.labels = ["person", "vehicle", "person with knife", "on fire", "person with gun", "graffiti", "person graffiting", "unknown"]
 
     def clean_gpu_memory(self):

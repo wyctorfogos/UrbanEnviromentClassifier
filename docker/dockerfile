@@ -7,14 +7,15 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
+# Copy the rest of the application code
+COPY ../src ./src
+
 # Copy the requirements file first to leverage Docker cache
 COPY ../requirements.txt ./requirements.txt
 
 # Install the dependencies
 RUN pip3 install -r requirements.txt
 
-# Copy the rest of the application code
-COPY ../src ./src
 
 # Set the default command to run the application
 CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "5000", "--reload"]
